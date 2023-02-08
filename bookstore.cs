@@ -2,75 +2,73 @@ using System;
 
 namespace bookStore
 {
-    class book()
+    class book
     {
-        private int Id;
-        private string Title;
-        private string Author;
-
-        public int Id()
+        private int _Id;
+        private string _Title;
+        private string _Author;
+        public book()
         {
-            get
-            {
-            return this.Id
-            }
-            set
-            {
-            this.Id;
-            }
+            _Id = 0;
+            _Title = "";
+            _Author = "";
+        }
+        public book(int id, string title, string author)
+        {
+            _Id = id;
+            _Title = title;
+            _Author = author;
+        }
+        public int getId()
+        {
+            return _Id;
+        }
+        public string getTitle()
+        {
+            return _Title;
+        }
+        public string getAuthor()
+        {
+            return _Author;
+        }
+        public int setId(int id)
+        {
+            _Id = id;
+        }
+        public string setTitle(string title)
+        {
+            _Title = title;
+        }
+        public string setAuthor(string author)
+        {
+            _Author = author;
         }
 
-        public string Title()
-        {
-            get
-            {
-            return this.Title
-            }
-            set
-            {
-            this.Title;
-            }
-            Console.WriteLine(Title);
-        }
-
-        public string Author()
-        {
-            get
-            {
-            return this.Author
-            }
-            set
-            {
-            this.Author;
-            }
-            Console.WriteLine(Author);
-        }
     }
     class myStore
     {
-
         static void Main(string[] args)
         {
             book book1 = new book();
-            book1.SetId(1);
-            book1.SetTitle("The Cool Goose Meets A Moose");
-            book1.SetAuthor("Trucie Goosie");
+            book1.setId(1);
+            book1.setTitle("The Cool Goose Meets A Moose");
+            book1.setAuthor("Trucie Goosie");
 
              book book2 = new book();
-            Console.WriteLine("Please enter the member ID: ");
-            book2.SetId(int.Parse(Console.ReadLine()));
-            Console.WriteLine("Please enter the first name: ");
-            book2.SetTitle(Console.ReadLine());
-            Console.WriteLine("Please enter the last name: ");
-            book2.SetAuthor(Console.ReadLine());
+            Console.WriteLine("Please enter the book ID: ");
+            book2.setId(int.Parse(Console.ReadLine()));
+            Console.WriteLine("Please enter the title: ");
+            book2.setTitle(Console.ReadLine());
+            Console.WriteLine("Please enter the author: ");
+            book2.setAuthor(Console.ReadLine());
 
             book book3 = new book(3, "Freddy's Fantastic Folk Tales", "Freddy F. Bear");
 
-            Console.WriteLine("Please enter the member ID: ");
+            Console.WriteLine("Please enter the book ID: ");
             int tempID = int.Parse(Console.ReadLine());
-            Console.WriteLine("Please enter the first name: ");
+            Console.WriteLine("Please enter the title: ");
             string tempTitle = Console.ReadLine();
-            Console.WriteLine("Please enter the last name: ");
+            Console.WriteLine("Please enter the author: ");
             string tempAuthor = Console.ReadLine();
             book book4 = new book(tempID, tempTitle, tempAuthor);
 
@@ -82,9 +80,9 @@ namespace bookStore
         static void displayBooks(book book1)
         {
         Console.WriteLine("Here's your book information");
-        Console.WriteLine($"Book ID: {book1.GetId()}");
-        Console.WriteLine($"Book Name: {book1.GetTitle()}");
-        Console.WriteLine($"Book Name: {book1.GetAuthor()}");
+        Console.WriteLine($"Book ID: {book1.getId()}");
+        Console.WriteLine($"Book Name: {book1.getTitle()}");
+        Console.WriteLine($"Author Name: {book1.getAuthor()}");
         }
 
     }
