@@ -27,6 +27,26 @@ namespace music
                 Length = length;
                 Genre = genre;
             }
+            public void setTitle(string title)
+            {
+                Title = title;
+            }
+            public void setAlbum(string album)
+            {
+                Album = album;
+            }
+            public void setArtist(string artist)
+            {
+                Artist = artist;
+            }
+            public void setLength(string length)
+            {
+                Length = length;
+            }
+            public void setGenre(Genre genre)
+            {
+                Genre = genre;
+            }
             public string Display()
             {
                 return "Title: " + Title + "\nArtist: " + Artist +
@@ -67,6 +87,22 @@ namespace music
             }
             Music music = new Music(tempTitle, tempAlbum, tempArtist, tempLength, tempGenre);
             Console.WriteLine($"{music.Display()}");
+
+            Music music = new Music(tempTitle, tempAlbum, tempArtist, tempLength, tempGenre);
+            // Copying the structure variable
+            Music newMusic = music;
+            //changing values in the new structure variable
+            Console.WriteLine("What is the next song on the album?");
+            newMusic.setTitle = Console.ReadLine();
+            Console.WriteLine("How long is the song?");
+            newMusic.setLength = Console.ReadLine();
+            //Printing the new movie
+            Console.WriteLine("Here's song #1");
+            Console.WriteLine($"{music.Display()}");
+            Console.WriteLine();
+            //Printing the original
+            Console.WriteLine("Here's song #2");
+            Console.WriteLine($"{newMusic.Display()}");
         }
     }
 }
